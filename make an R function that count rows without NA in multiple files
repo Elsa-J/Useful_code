@@ -1,10 +1,37 @@
 
-make an R function that count rows without NA in multiple files
+RStudio
 
-https://stackoverflow.com/questions/30810538/make-an-r-function-that-count-rows-without-na-in-multiple-files
+# Make an R function that count rows without NA in multiple files
+
+## https://stackoverflow.com/questions/30810538/make-an-r-function-that-count-rows-without-na-in-multiple-files
 
 counts <- rep(NA, length(id))
 for (i in id) {
     dat <- read.csv(file.list[i])
     counts[i] <- sum(complete.cases(dat))
 }
+
+# How do I write multiple CSV files from a list of data frames?
+
+## https://stackoverflow.com/questions/39356375/how-do-i-write-multiple-csv-files-from-a-list-of-data-frames
+
+myList <- list(diamonds = diamonds, 
+               cars = cars)
+for(i in names(mylist)){
+  write.csv(myList[[i]], paste0(i,".csv"))
+}
+
+# How to remove '.' from column content in a dataframe? (ENSEMBL IDs)
+
+## https://stackoverflow.com/questions/45418222/how-to-remove-from-column-content-in-a-dataframe
+
+df1$geneID <- sub("\\.\\d+", "", df1$geneID)
+
+# Remove a character from the entire data frame
+
+## https://stackoverflow.com/questions/32857873/remove-a-character-from-the-entire-data-frame
+
+df[] <- lapply(df, gsub, pattern="\\\$", replacement="")
+
+
+
