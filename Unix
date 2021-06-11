@@ -1,0 +1,7 @@
+
+# Move a set of files within a directory using a "filelist.txt" containing the names of the files you want to move to a different directory ("bad")
+## https://www.unix.com/unix-for-dummies-questions-and-answers/229225-move-file-using-file-list.html
+
+### bash
+cd /cluster/home/input  
+mv $(cat /full_path/filelist) /cluster/home/bad
