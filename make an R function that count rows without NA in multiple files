@@ -1,0 +1,10 @@
+
+make an R function that count rows without NA in multiple files
+
+https://stackoverflow.com/questions/30810538/make-an-r-function-that-count-rows-without-na-in-multiple-files
+
+counts <- rep(NA, length(id))
+for (i in id) {
+    dat <- read.csv(file.list[i])
+    counts[i] <- sum(complete.cases(dat))
+}
