@@ -1,7 +1,28 @@
 
+# Count files in a directory 
+## https://devconnected.com/how-to-count-files-in-directory-on-linux/
+
+$ ls | wc -l
+
+
 # Move a set of files within a directory using a "filelist.txt" containing the names of the files you want to move to a different directory ("bad")
 ## https://www.unix.com/unix-for-dummies-questions-and-answers/229225-move-file-using-file-list.html
 
 ### bash
-cd /cluster/home/input  
-mv $(cat /full_path/filelist) /cluster/home/bad
+$ cd /cluster/home/input  
+$ mv $(cat /full_path/filelist) /cluster/home/bad
+
+################################################################
+
+# Removing part of a filename for multiple files on Linux
+## https://stackoverflow.com/questions/12174947/removing-part-of-a-filename-for-multiple-files-on-linux
+
+### Removing "_allGene_DESeq2" from csv files in DEG_List_All_logFC_0.58 directory
+
+$ for filename in *_DEGs.csv; do 
+    [ -f "$filename" ] || continue
+    mv "$filename" "${filename//_allGene_DESeq2/}"
+
+done
+
+################################################################
