@@ -19,10 +19,17 @@ $ mv $(cat /full_path/filelist) /cluster/home/bad
 
 ### Removing "_allGene_DESeq2" from csv files in DEG_List_All_logFC_0.58 directory
 
-$ for filename in *_DEGs.csv; do 
+for filename in *_DEGs.csv; do 
     [ -f "$filename" ] || continue
     mv "$filename" "${filename//_allGene_DESeq2/}"
 
 done
+
+# How to remove characters from file names using command line
+## https://askubuntu.com/questions/976368/how-to-remove-characters-from-file-names-using-command-line
+
+### I want to get rid of the middle "csv" in filename.csv_DEGs.csv created by my R code
+
+for f in ./*; do mv "$f" "${f%.*_DEGs.csv}_DEGs.csv" ; done
 
 ################################################################
