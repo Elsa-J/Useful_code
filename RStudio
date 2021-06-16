@@ -33,5 +33,40 @@ df1$geneID <- sub("\\.\\d+", "", df1$geneID)
 
 df[] <- lapply(df, gsub, pattern="\\\$", replacement="")
 
+######################################################
+
+# Keeping pheatmap colour range the same for different data sets
+## https://stackoverflow.com/questions/56447392/r-pheatmap-scale-different-than-scale-before-pheatmap
+
+#######################################################
+
+# Reordering rows in a dataframe according to the order of rows in another dataframe
+## https://stackoverflow.com/questions/27362718/reordering-rows-in-a-dataframe-according-to-the-order-of-rows-in-another-datafra
+
+scale_sorted_order <- new[order(match(new$GeneID, Top_ISGs_file$GeneID)), ]
+
+#########################################################
+
+# Removing display of row names from data frame
+## https://stackoverflow.com/questions/24428051/removing-display-of-row-names-from-data-frame
+
+rownames(df) <- NULL
+
+###########################################################
+
+# R remove borders of pheatmap
+## https://stackoverflow.com/questions/12877306/r-remove-borders-of-pheatmap
+
+border_color=NA
+
+#############################################################
+
+# Colour zero values in heatmap.2()
+## https://stackoverflow.com/questions/41560453/colour-zero-values-in-heatmap-2
+
+heatmap.2(deco.hmBB, main = "BCC at day 0 and day 10", margins = c(6,9),
+trace = "none", density.info = "none", dendrogram = "none", 
+col = my_palette, breaks = col_breaks, Colv = "NA", na.color = "White")
+
 
 
