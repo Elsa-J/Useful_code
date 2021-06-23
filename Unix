@@ -33,3 +33,14 @@ done
 for f in ./*; do mv "$f" "${f%.*_DEGs.csv}_DEGs.csv" ; done
 
 ################################################################
+
+# Write file names into txt file
+## https://unix.stackexchange.com/questions/261183/write-file-names-in-to-a-file
+
+### When in concerned folder: 
+
+ls >> Out_file.txt
+
+###################################################################
+
+
