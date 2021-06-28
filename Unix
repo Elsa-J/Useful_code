@@ -43,4 +43,15 @@ ls >> Out_file.txt
 
 ###################################################################
 
+# Create the file using cat
+https://stackoverflow.com/questions/9381463/how-to-create-a-file-in-linux-from-terminal-window
 
+cat > myfile.txt
+
+# Now, just type whatever you want in the file:
+
+Hello World!
+
+# CTRL-D to save and exit
+
+##################################################################
