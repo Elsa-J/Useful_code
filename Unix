@@ -25,6 +25,15 @@ for filename in *_DEGs.csv; do
 
 done
 
+##################################################################
+
+# Repace all "-" in file names with "_"
+## https://unix.stackexchange.com/questions/336866/how-to-replace-a-character-in-a-set-of-file-names
+
+for f in *.fq.gz; do mv -- "$f" "${f/-/_}"; done
+
+################################################################
+
 # How to remove characters from file names using command line
 ## https://askubuntu.com/questions/976368/how-to-remove-characters-from-file-names-using-command-line
 
